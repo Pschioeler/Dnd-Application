@@ -1,60 +1,68 @@
 <template>
-  <main class="register-view">
-    <form @submit.prevent="handleRegister">
-      <h2>Create an Account</h2>
-      <input type="email" v-model="email" placeholder="Email" required>
-      <input type="password" v-model="password" placeholder="Password" required>
-      <button type="submit" :disabled="loading">Register</button>
-      <p v-if="error" class="error">{{ error }}</p>
+  <div>
+    <h1>Register</h1>
+    <form @submit.prevent="registerUser">
+      <input v-model="email" type="email" placeholder="Email" required @blur="validateEmail">
+      <input v-model="username" type="text" placeholder="Username" required @blur="clearError">
+      <input v-model="password" type="password" placeholder="Password" required @blur="validatePassword">
+      <input v-model="repeatPassword" type="password" placeholder="Repeat Password" required @blur="validateRepeatPassword">
+      <button type="submit">Register</button>
     </form>
-  </main>
+    <p v-if="error">{{ error }}</p>
+    <router-link to="/login">Already have an account? Login here.</router-link>
+  </div>
 </template>
 
 <script>
-import { ref } from 'vue';
 import { useUserStore } from '@/stores/userStore';
+import { ref, computed } from 'vue';
 
 export default {
   setup() {
-    const store = useUserStore();
-    const email = ref('');
-    const password = ref('');
+    const userStore = useUserStore();
+    const email = ref("");
+    const username = ref("");
+    const password = ref("");
+    const repeatPassword = ref("");
+    const error = computed(() => userStore.error);
 
-    const handleRegister = async () => {
-      await store.register(email.value, password.value);
+    const registerUser = () => {
+      userStore.register(email.value, password.value, username.value, repeatPassword.value);
     };
 
-    return {
-      email,
-      password,
-      handleRegister,
-      loading: store.loading,
-      error: store.error,
+    const clearError = () => {
+      userStore.clearError();
     };
-  },
+
+    const validateEmail = () => {
+      if (!/.+@.+\..+/.test(email.value)) {
+        userStore.error = "Invalid email format.";
+      } else {
+        clearError();
+      }
+    };
+
+    const validatePassword = () => {
+      if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{14,}/.test(password.value)) {
+        userStore.error = "Password must be at least 14 characters and include uppercase, lowercase, a number, and a special character.";
+      } else {
+        clearError();
+      }
+    };
+
+    const validateRepeatPassword = () => {
+      if (password.value !== repeatPassword.value) {
+        userStore.error = "Passwords do not match.";
+      } else {
+        clearError();
+      }
+    };
+
+    return { email, username, password, repeatPassword, registerUser, error, clearError, validateEmail, validatePassword, validateRepeatPassword };
+  }
 };
 </script>
 
 <style scoped>
-.register-view {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  gap: 1rem;
-}
-
-button {
-  cursor: pointer;
-}
-
-.error {
-  color: red;
-}
+/* Add your styles here */
 </style>

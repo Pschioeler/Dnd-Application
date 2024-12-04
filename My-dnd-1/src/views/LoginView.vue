@@ -1,61 +1,40 @@
 <template>
-    <main class="login-view">
-      <form @submit.prevent="handleLogin">
-        <h2>Login</h2>
-        <input type="email" v-model="email" placeholder="Email" required>
-        <input type="password" v-model="password" placeholder="Password" required>
-        <button type="submit" :disabled="loading">Login</button>
-        <p v-if="error" class="error">{{ error }}</p>
-      </form>
-    </main>
-  </template>
-  
-  <script>
-  import { ref } from 'vue';
-  import { useUserStore } from '@/stores/userStore';
-  
-  export default {
-    setup() {
-      const store = useUserStore();
-      const email = ref('');
-      const password = ref('');
-  
-      const handleLogin = async () => {
-        await store.login(email.value, password.value);
-      };
-  
-      return {
-        email,
-        password,
-        handleLogin,
-        loading: store.loading,
-        error: store.error,
-      };
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .login-view {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  <div>
+    <h1>Login</h1>
+    <form @submit.prevent="loginUser">
+      <input v-model="email" type="email" placeholder="Email" required @blur="clearError">
+      <input v-model="password" type="password" placeholder="Password" required @blur="clearError">
+      <button type="submit">Login</button>
+    </form>
+    <p v-if="error">{{ error }}</p>
+    <router-link to="/register">Don't have an account? Sign up here.</router-link>
+  </div>
+</template>
+
+<script>
+import { useUserStore } from '@/stores/userStore';
+import { ref, computed } from 'vue';
+
+export default {
+  setup() {
+    const userStore = useUserStore();
+    const email = ref("");
+    const password = ref("");
+    const error = computed(() => userStore.error);
+
+    const loginUser = () => {
+      userStore.login(email.value, password.value);
+    };
+
+    const clearError = () => {
+      userStore.clearError();
+    };
+
+    return { email, password, loginUser, error, clearError };
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    gap: 1rem;
-  }
-  
-  button {
-    cursor: pointer;
-  }
-  
-  .error {
-    color: red;
-  }
-  </style>
-  
+};
+</script>
+
+<style scoped>
+/* Add your styles here */
+</style>
