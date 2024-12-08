@@ -1,0 +1,23 @@
+<svg id="Group_3" data-name="Group 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.382" height="64.382" viewBox="0 0 64.382 64.382">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ba973b"/>
+      <stop offset="0.151" stop-color="#a57d24"/>
+      <stop offset="0.43" stop-color="#f1dd80"/>
+      <stop offset="0.591" stop-color="#fbf2a8"/>
+      <stop offset="0.726" stop-color="#f1dd80"/>
+      <stop offset="0.926" stop-color="#a57d24"/>
+      <stop offset="0.93" stop-color="#a77f26"/>
+      <stop offset="1" stop-color="#bf9e40"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(10.362 14.1)">
+    <path id="Path_1" data-name="Path 1" d="M142.881,86.727a10.787,10.787,0,1,1-10.7,10.787A10.73,10.73,0,0,1,142.881,86.727Z" transform="translate(-121.052 -86.727)" fill="#d7e9ff"/>
+    <path id="Path_2" data-name="Path 2" d="M107.4,260.6a29.622,29.622,0,0,1-43.657,0C75.8,244.888,95.335,244.888,107.4,260.6Z" transform="translate(-63.739 -222.465)" fill="#d7e9ff"/>
+  </g>
+  <path id="Path_3" data-name="Path 3" d="M74.96,45.316a29.548,29.548,0,0,1-7.814,20.045c-12.061-15.713-31.6-15.713-43.657,0A29.64,29.64,0,1,1,74.96,45.316Zm-18.941-7.3A10.7,10.7,0,1,0,45.317,48.8,10.73,10.73,0,0,0,56.019,38.011Z" transform="translate(-13.126 -13.125)" fill="url(#linear-gradient)"/>
+  <g id="Group_2" data-name="Group 2">
+    <path id="Path_4" data-name="Path 4" d="M32.191,0A32.225,32.225,0,0,0,0,32.191,31.818,31.818,0,0,0,8.494,53.935h0A32.179,32.179,0,1,0,32.191,0Zm0,5.1A27.1,27.1,0,0,1,54.02,48.244c-6.031-6.71-13.675-10.362-21.829-10.362S16.478,41.534,10.362,48.244A27.1,27.1,0,0,1,32.191,5.1ZM13.845,52.066c5.1-5.861,11.551-9.088,18.346-9.088s13.25,3.228,18.346,9.088a26.92,26.92,0,0,1-36.693,0Z" fill="#fff"/>
+    <path id="Path_5" data-name="Path 5" d="M129.756,97.724a13.335,13.335,0,1,1,13.25-13.335A13.285,13.285,0,0,1,129.756,97.724Zm0-21.574a8.239,8.239,0,1,0,8.154,8.239A8.229,8.229,0,0,0,129.756,76.15Z" transform="translate(-97.565 -59.502)" fill="#fff"/>
+  </g>
+</svg>
