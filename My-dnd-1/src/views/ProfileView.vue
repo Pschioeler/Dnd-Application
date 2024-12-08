@@ -83,7 +83,7 @@
   
       const validateChangePassword = () => {
         if (oldPassword.value === newPassword.value) {
-          passwordError.value = "New password can't be the same as older passwords.";
+          passwordError.value = "New password can't be the same as old password.";
         } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{14,}/.test(newPassword.value)) {
           passwordError.value = "Password must be at least 14 characters and include uppercase, lowercase, a number, and a special character.";
         } else {
