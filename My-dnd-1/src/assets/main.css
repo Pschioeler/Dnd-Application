@@ -19,6 +19,25 @@
   }
 }
 
+body {
+  font-family: 'Raleway', sans-serif; /* Default font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif; /* Headings using Cinzel Decorative */
+  font-weight: 700; /* Bold by default */
+}
+
+.header-title {
+  font-family: 'Cinzel', serif; /* Header title using Cinzel Variable */
+  font-weight: 400; /* Regular weight */
+}
+
+.italic-text {
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+}
+
 /* General Component Styling */
 .header {
   background-color: var(--color-background-primary-light);

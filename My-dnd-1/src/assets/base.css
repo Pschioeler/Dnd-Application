@@ -32,6 +32,54 @@
   --color-info: var(--purple-standard);
 }
 
+/* Cinzel Variable Font */
+@font-face {
+  font-family: 'Cinzel';
+  src: url('@/assets/fonts/Cinzel-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300 900; /* The weight range available */
+  font-style: normal;
+}
+
+/* Cinzel Decorative - Regular */
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('@/assets/fonts/CinzelDecorative-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+}
+
+/* Cinzel Decorative - Bold */
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('@/assets/fonts/CinzelDecorative-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+}
+
+/* Cinzel Decorative - Black */
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('@/assets/fonts/CinzelDecorative-Black.ttf') format('truetype');
+  font-weight: 900; /* Black weight */
+  font-style: normal;
+}
+
+/* Raleway Variable Font */
+@font-face {
+  font-family: 'Raleway';
+  src: url('@/assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; /* The weight range available */
+  font-style: normal;
+}
+
+/* Raleway Italic Variable Font */
+@font-face {
+  font-family: 'Raleway';
+  src: url('@/assets/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; /* The weight range available */
+  font-style: italic;
+}
+
 /* General Reset */
 * {
   margin: 0;
