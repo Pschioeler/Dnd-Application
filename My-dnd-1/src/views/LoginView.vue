@@ -82,6 +82,7 @@ export default {
   .auth-image {
     display: block;
     width: 50%;
+    
   }
 
   .auth-image img {

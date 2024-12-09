@@ -44,9 +44,9 @@ export default {
 }
 
 .main-content {
+  flex: 1;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 20px;
-  flex: 1;
+  padding: 20px 20px 0; /* Adjust padding to create a balanced top margin */
 }
 </style>
