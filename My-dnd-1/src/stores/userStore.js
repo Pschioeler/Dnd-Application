@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia';
 import { auth } from '@/firebase/config';
 import router from '@/router';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, updatePassword, deleteUser, sendEmailVerification, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword,
+   signOut, onAuthStateChanged, updatePassword, deleteUser,
+    sendEmailVerification, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 export const useUserStore = defineStore('userStore', {
   state: () => ({
